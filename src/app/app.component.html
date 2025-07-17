@@ -1,0 +1,14 @@
+<div style="text-align:center">
+    <h1>Weather App</h1>
+
+    <input [(ngModel)]="city" placeholder="Enter city name" />
+    <button (click)="getWeather()">Search</button>
+
+    <div *ngIf="weatherData">
+        <h2>{{ weatherData.name }}</h2>
+        <p>Temperature: {{ weatherData.main.temp }} °C</p>
+        <p>Humidity: {{ weatherData.main.humidity }}%</p>
+        <p>Description: {{ weatherData.weather[0].description }}</p>
+        <img src="http://openweathermap.org/img/w/{{ weatherData.weather[0].icon }}.png" alt="Weather Icon">
+    </div>
+</div>
